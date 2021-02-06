@@ -27,19 +27,24 @@ public class ApplicationController {
 	Application createApplication(@RequestBody Application application, @PathVariable long id) {
 		return applicationService.createApplicationForUser(application, id);
 	}
-	@PostMapping("/createApplicationForEnterprise/{id}")
-	Application createApplicationForEnterprise(@RequestBody Application application, @PathVariable long id) {
-		return applicationService.createApplicationForEnterprise(application, id);
+	@PostMapping("/createApplicationForEnterprise/{idApplication}/{id}")
+	Application createApplicationForEnterprise(@PathVariable long idApplication, @PathVariable long id) {
+		return applicationService.createApplicationForEnterprise(idApplication, id);
 	}
 	   
-	@GetMapping("/findApplications/{id}")
-	List<Application> findApplications(@PathVariable long id) {
-		return findApplications(id);
+	@GetMapping("/findApplications")
+	List<Application> findApplications() {
+		return applicationService.findApplications();
+	}
+	
+	@GetMapping("/findApplicationsForEnterprise/{id}")
+	List<Application> findApplicationsForEnterprise(@PathVariable long id) {
+		return applicationService.findApplicationsForEnterprise(id);
 	}
 
 	@GetMapping("/findApplication/{id}")
 	Application findApplication(@PathVariable long id) {
-		return findApplication(id);
+		return applicationService.findApplication(id);
 	}
 
 	@DeleteMapping("/deleteApplication/{id}")

@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import com.enterprise.calculator.CalculateHighApps;
-import com.enterprise.calculator.CalculateHigtAndPhp;
-import com.enterprise.calculator.CalculateJavaApps;
-import com.enterprise.calculator.CalculateLowAndJava;
-import com.enterprise.calculator.CalculateLowApps;
-import com.enterprise.calculator.CalculatePhpApps;
+import com.enterprise.calculator.CalculateHigh;
+import com.enterprise.calculator.CalculateMedium;
+import com.enterprise.calculator.CalculateJava;
+import com.enterprise.calculator.CalculateJavascript;
+import com.enterprise.calculator.CalculateLow;
+import com.enterprise.calculator.CalculatePhp;
 import com.enterprise.dao.EnterpriseDao;
 import com.enterprise.modal.Enterprise;
 import com.enterprise.service.EnterpriseService;
@@ -43,45 +43,45 @@ public class EnterpriseServiceImpl implements EnterpriseService {
 	}
 
 	@Override
-	public int calculateJavaApps(Enterprise enterprise) {
-		CalculateJavaApps calculateJavaApps = new CalculateJavaApps();
-		enterprise.accept(calculateJavaApps);
-		return calculateJavaApps.getValue();
+	public int calculateJava(Enterprise enterprise) {
+		CalculateJava calculateJava = new CalculateJava();
+		enterprise.accept(calculateJava);
+		return calculateJava.getValue();
 	}
 
 	@Override
-	public int calculateLowApps(Enterprise enterprise) {
-		CalculateLowApps calculateLowApps = new CalculateLowApps();
-		enterprise.accept(calculateLowApps);
-		return calculateLowApps.getValue();
+	public int calculateLow(Enterprise enterprise) {
+		CalculateLow calculateLow = new CalculateLow();
+		enterprise.accept(calculateLow);
+		return calculateLow.getValue();
 	}
 
 	@Override
-	public int calculateLowAndJava(Enterprise enterprise) {
-		CalculateLowAndJava calculateLowAndJava = new CalculateLowAndJava();
-		enterprise.accept(calculateLowAndJava);
-		return calculateLowAndJava.getValue();
+	public int calculateMedium(Enterprise enterprise) {
+		CalculateMedium calculateMedium = new CalculateMedium();
+		enterprise.accept(calculateMedium);
+		return calculateMedium.getValue();
 	}
 
 	@Override
-	public int calculatePhpApps(Enterprise enterprise) {
-		CalculatePhpApps calculatePhpApps = new CalculatePhpApps();
+	public int calculatePhp(Enterprise enterprise) {
+		CalculatePhp calculatePhpApps = new CalculatePhp();
 		enterprise.accept(calculatePhpApps);
 		return calculatePhpApps.getValue();
 	}
 
 	@Override
-	public int calculateHighApps(Enterprise enterprise) {
-		CalculateHighApps calculateHighApps = new CalculateHighApps();
-		enterprise.accept(calculateHighApps);
-		return calculateHighApps.getValue();
+	public int calculateJavascript(Enterprise enterprise) {
+		CalculateJavascript calculateJavascript = new CalculateJavascript();
+		enterprise.accept(calculateJavascript);
+		return calculateJavascript.getValue();
 	}
 
 	@Override
-	public int calculateHigtAndPhp(Enterprise enterprise) {
-		CalculateHigtAndPhp calculateHigtAndPhp = new CalculateHigtAndPhp();
-		enterprise.accept(calculateHigtAndPhp);
-		return calculateHigtAndPhp.getValue();
+	public int calculateHigh(Enterprise enterprise) {
+		CalculateHigh calculateHigh = new CalculateHigh();
+		enterprise.accept(calculateHigh);
+		return calculateHigh.getValue();
 	}
 
 

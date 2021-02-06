@@ -28,7 +28,7 @@ public class Enterprise implements Serializable, Visitable {
 	@Column(columnDefinition = "VARCHAR(40)")
 	private String name;
 	
-	@Column(columnDefinition="VARCHAR(40)")
+	@Column(columnDefinition = "TEXT")
 	private String description;
 	
 	@OneToMany(mappedBy="enterprise", cascade = CascadeType.ALL)

@@ -3,6 +3,8 @@ package com.enterprise.modal;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,11 +24,13 @@ public class Application implements Visitable {
 	@Column(columnDefinition="VARCHAR(40)")
 	private String name;
 	
-	@Column(columnDefinition="VARCHAR(40)")
+	@Column(columnDefinition = "TEXT")
 	private String description;
 	
+	@Enumerated(EnumType.STRING)
 	private Language language;
 	
+	@Enumerated(EnumType.STRING)
 	private Criticality criticality;
 	
 	@JsonBackReference(value = "user")
@@ -40,15 +44,7 @@ public class Application implements Visitable {
 	public Application() {
 		super();
 	}
-	public Application(String name, String description, Language language, Criticality criticality, User user) {
-		super();
-		this.name = name;
-		this.description = description;
-		this.language = language;
-		this.criticality = criticality;
-		this.user = user;
-	}
-	
+
 	public Application(String name, String description, Language language, Criticality criticality, User user,
 			Enterprise enterprise) {
 		super();

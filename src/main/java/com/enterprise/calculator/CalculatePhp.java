@@ -6,18 +6,18 @@ import com.enterprise.modal.Language;
 import com.enterprise.modal.User;
 import com.enterprise.visitor.Visitor;
 
-public class CalculateJavaApps implements Visitor {
-	
+public class CalculatePhp implements Visitor {
 	private int value = 0;
 
 	@Override
 	public int visit(Enterprise enterprise) {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int visit(Application application) {
-		if (application.getLanguage() == Language.JAVA) {
+		if (application.getLanguage() == Language.PHP) {
 			value++;
 		}
 		return value;
@@ -25,6 +25,7 @@ public class CalculateJavaApps implements Visitor {
 
 	@Override
 	public int visit(User user) {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -32,5 +33,5 @@ public class CalculateJavaApps implements Visitor {
 		return value;
 	}
 
-   
+
 }

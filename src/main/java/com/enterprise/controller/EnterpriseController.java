@@ -46,34 +46,34 @@ public class EnterpriseController {
 	void deleteEnterprise(@PathVariable long id) {
 		enterpriseService.deleteEnterprise(id);
 	}
-    @GetMapping("/calculateJavaApps/{id}")
+    @GetMapping("/calculateJava/{id}")
 	int calculateJavaApps(@PathVariable long id) {
     	Enterprise enterprise = enterpriseDao.findById(id).get();
-		return enterpriseService.calculateJavaApps(enterprise);
+		return enterpriseService.calculateJava(enterprise);
 	}
-    @GetMapping("/calculateLowApps/{id}")
+    @GetMapping("/calculateLow/{id}")
 	int calculateLowApps(@PathVariable long id) {
     	Enterprise enterprise = enterpriseDao.findById(id).get();
-		return enterpriseService.calculateLowApps(enterprise);
+		return enterpriseService.calculateLow(enterprise);
 	}
-    @GetMapping("/calculateLowAndJava/{id}")
+    @GetMapping("/calculateMedium/{id}")
 	int calculateLowAndJava(@PathVariable long id) {
     	Enterprise enterprise = enterpriseDao.findById(id).get();
-		return enterpriseService.calculateLowAndJava(enterprise);
+		return enterpriseService.calculateMedium(enterprise);
 	}
-    @GetMapping("/calculatePhpApps/{id}")
+    @GetMapping("/calculatePhp/{id}")
 	int calculatePhpApps(@PathVariable long id) {
     	Enterprise enterprise = enterpriseDao.findById(id).get();
-		return enterpriseService.calculatePhpApps(enterprise);
+		return enterpriseService.calculatePhp(enterprise);
 	}
-    @GetMapping("/calculateHighApps")
+    @GetMapping("/calculateHigh/{id}")
 	int calculateHighApps(@PathVariable long id) {
     	Enterprise enterprise = enterpriseDao.findById(id).get();
-		return enterpriseService.calculateHighApps(enterprise);
+		return enterpriseService.calculateHigh(enterprise);
 	}
-    @GetMapping("/calculateHigtAndPhp/{id}")
+    @GetMapping("/calculateJavascript/{id}")
 	int calculateHigtAndPhp(@PathVariable long id) {
     	Enterprise enterprise = enterpriseDao.findById(id).get();
-		return enterpriseService.calculateHigtAndPhp(enterprise);
+		return enterpriseService.calculateJavascript(enterprise);
 	}
 }

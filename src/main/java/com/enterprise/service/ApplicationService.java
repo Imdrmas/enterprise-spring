@@ -7,9 +7,11 @@ import com.enterprise.modal.Application;
 public interface ApplicationService {
    Application createApplicationForUser(Application application, long id);
    
-   Application createApplicationForEnterprise(Application application, long id);
+   Application createApplicationForEnterprise(long idApplication, long id);
    
-   List<Application> findApplications(long id);
+   List<Application> findApplications();
+   
+   List<Application> findApplicationsForEnterprise(long id);
    
    Application findApplication(long id);
    

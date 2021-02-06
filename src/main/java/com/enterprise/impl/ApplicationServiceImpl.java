@@ -35,9 +35,8 @@ public class ApplicationServiceImpl implements ApplicationService{
 	}
 
 	@Override
-	public List<Application> findApplications(long id) {
-		Enterprise enterprise = enterpriseDao.findById(id).orElse(null);
-		return enterprise.getApplications();
+	public List<Application> findApplications() {
+		return applicationDao.findAll();
 	}
 
 	@Override
@@ -47,13 +46,22 @@ public class ApplicationServiceImpl implements ApplicationService{
 
 	@Override
 	public void deleteApplication(long id) {
-		applicationDao.deleteById(id);		
+		Application application = applicationDao.findById(id).orElse(null);
+		application.setUser(null);
+		applicationDao.delete(application);		
 	}
 
 	@Override
-	public Application createApplicationForEnterprise(Application application, long id) {
+	public Application createApplicationForEnterprise(long idApplication, long id) {
 		Enterprise enterprise = enterpriseDao.findById(id).orElse(null);
+		Application application = applicationDao.findById(idApplication).orElse(null);
 		enterprise.addApplication(application);
 		return applicationDao.save(application);
+	}
+
+	@Override
+	public List<Application> findApplicationsForEnterprise(long id) {
+		Enterprise enterprise = enterpriseDao.findById(id).orElse(null);
+		return enterprise.getApplications();
 	}
 }

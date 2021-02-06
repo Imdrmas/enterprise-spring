@@ -3,11 +3,10 @@ package com.enterprise.calculator;
 import com.enterprise.modal.Application;
 import com.enterprise.modal.Criticality;
 import com.enterprise.modal.Enterprise;
-import com.enterprise.modal.Language;
 import com.enterprise.modal.User;
 import com.enterprise.visitor.Visitor;
 
-public class CalculateHigtAndPhp implements Visitor {
+public class CalculateHigh implements Visitor {
 	
 	private int value = 0;
 
@@ -19,7 +18,7 @@ public class CalculateHigtAndPhp implements Visitor {
 
 	@Override
 	public int visit(Application application) {
-		if (application.getCriticality()==Criticality.HIGH && application.getLanguage() == Language.PHP) {
+		if (application.getCriticality()==Criticality.HIGH) {
 			value++;
 		}
 		return value;
@@ -34,5 +33,5 @@ public class CalculateHigtAndPhp implements Visitor {
 	public int getValue() {
 		return value;
 	}
-
+	
 }

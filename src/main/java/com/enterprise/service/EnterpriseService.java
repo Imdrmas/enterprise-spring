@@ -17,16 +17,16 @@ public interface EnterpriseService {
 	 
 	 void deleteEnterprise(long id);
 	  
-	 int calculateJavaApps(Enterprise enterprise);
+	 int calculateJava(Enterprise enterprise);
 	 
-	 int calculateLowApps(Enterprise enterprise);
+	 int calculateLow(Enterprise enterprise);
 	 
-	 int calculateLowAndJava(Enterprise enterprise);
+	 int calculateMedium(Enterprise enterprise);
 	 
-	 int calculatePhpApps(Enterprise enterprise);
+	 int calculatePhp(Enterprise enterprise);
 	 
-	 int calculateHighApps(Enterprise enterprise);
+	 int calculateHigh(Enterprise enterprise);
 	 
-	 int calculateHigtAndPhp(Enterprise enterprise);
+	 int calculateJavascript(Enterprise enterprise);
 
 }

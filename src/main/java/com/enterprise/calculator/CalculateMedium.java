@@ -6,7 +6,7 @@ import com.enterprise.modal.Enterprise;
 import com.enterprise.modal.User;
 import com.enterprise.visitor.Visitor;
 
-public class CalculateLowApps implements Visitor {
+public class CalculateMedium implements Visitor {
 	
 	private int value = 0;
 
@@ -18,7 +18,7 @@ public class CalculateLowApps implements Visitor {
 
 	@Override
 	public int visit(Application application) {
-		if (application.getCriticality()== Criticality.LOW) {
+		if (application.getCriticality()==Criticality.MEDIUM) {
 			value++;
 		}
 		return value;
@@ -34,6 +34,4 @@ public class CalculateLowApps implements Visitor {
 		return value;
 	}
 
-
-	
 }

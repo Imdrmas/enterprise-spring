@@ -6,7 +6,8 @@ import com.enterprise.modal.Language;
 import com.enterprise.modal.User;
 import com.enterprise.visitor.Visitor;
 
-public class CalculatePhpApps implements Visitor {
+public class CalculateJavascript implements Visitor {
+	
 	private int value = 0;
 
 	@Override
@@ -17,7 +18,7 @@ public class CalculatePhpApps implements Visitor {
 
 	@Override
 	public int visit(Application application) {
-		if (application.getLanguage() == Language.PHP) {
+		if (application.getLanguage()==Language.JAVASCRIPT) {
 			value++;
 		}
 		return value;
@@ -32,6 +33,5 @@ public class CalculatePhpApps implements Visitor {
 	public int getValue() {
 		return value;
 	}
-
-
+	
 }
